@@ -1,0 +1,385 @@
+.a{
+    color: green;
+    transition: all ease-in-out;
+}
+
+.b{
+    color :black;
+}
+
+
+.h1{
+    margin-bottom: 2rem;
+}
+.grid{
+    display:grid;
+grid-template-columns: repeat(auto-fit,21rem);
+width:100%;
+grid-gap:3vw;
+place-content:center;
+
+
+}
+
+.ontop{
+    position: relative;
+
+    width: 100%;;
+  
+
+}
+
+.ss{
+    width: 100%;
+        display: flex;
+     margin-left: 4rem;
+
+
+
+}
+
+@media screen and (max-width:900px){
+
+    .ss{
+        display: none;
+    }
+    .ss1{
+        display: initial;
+    }
+}
+
+
+
+
+.ss1{
+    position: absolute;
+    top:-400%;
+    width: 100%;;
+display: flex;
+  height: 9vh;;
+
+}
+
+.img{
+cursor: pointer;
+    margin-left: 3rem;
+}
+
+.img1{
+    cursor: pointer;
+  
+}
+
+
+.dot{
+    
+position: absolute;
+transform: translate(-13px,15px);
+    height: 4px;
+    width: 4px;
+}
+.dot1{
+    
+position: absolute;
+transform: translate(-7px,15px);
+    height: 4px;
+    width: 4px;
+}
+
+.cartDiv{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;;
+    text-align: center;
+
+
+}
+
+.cartDiv>img{
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.dropdown{
+
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+    bottom:0;
+
+}
+
+
+.inside{
+    margin-top: 1rem;;
+}
+
+
+.s{
+    position: relative;
+    margin-top: 4rem;
+}
+
+.view{
+    
+    margin:2rem 1rem 1rem 1rem;
+   background: #FFFFFF;
+   cursor: pointer;
+   
+
+}
+.view:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+ 
+}
+
+.view:hover .circle{
+    transform: scale(1) translateY(-10px);
+}
+
+.none{
+    display:none;
+   
+}
+
+img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.ro{
+    width:80%;
+    height: 80%;
+    margin: 0.3rem auto;
+    position: relative;
+}
+
+.symbols:hover p{
+
+        background:black;
+     color:white;
+      
+}
+.categoryDiv{
+    padding:2rem;
+        margin-top: 3rem; ;
+    color:rgba(29, 31, 34, 1);
+    font-size:30px;
+    text-align:left;
+
+    display: flex;;
+    align-items: flex-end;
+
+}
+
+.categoryDiv>h1{
+    margin-top: 1.4rem;;
+    margin-left: 4rem;
+}
+
+.linkDiv{
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    padding: 1.5rem;;
+    margin-right: 2rem;;
+   
+ 
+    
+}
+.first{
+    display: flex;
+
+
+}
+
+.linkDiv1{
+
+background-color: yellow;
+}
+
+
+    .active{
+        height: 100%;
+        padding: 1.2rem 0.4rem;;
+        margin-right: 0;;
+        transition: all 0.3s ease-in-out;
+        margin-left: 0.2rem;
+        border-bottom: 1px solid rgba(94, 206, 123, 1);
+    }
+
+    .Mediaactive{
+        transition: all 0.3s ease-in-out;
+        border-bottom: 1px solid rgba(94, 206, 123, 1);
+    }
+
+.empty{
+    padding: 2rem;;
+    font-weight: 700;
+}
+.bag{
+    display: flex;
+    padding: 1rem;
+    justify-content:space-between;;
+    margin-bottom:1rem;;
+   
+}
+
+.att{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overall{
+    overflow-y:auto;
+    height:auto;
+    max-height:400px;
+
+    margin: auto;
+    width: 97%;
+}
+
+.name{
+    padding: 1rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.priece{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+.in1{
+    display: flex;
+    justify-content: center;
+}
+
+.second{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.plus{
+    font-size: 2rem;
+}
+
+.cartPage{
+    padding: 1rem;;
+    width: 80%;;
+    margin: auto;
+}
+
+.pp{
+    color: black;
+    text-decoration-style: solid;
+    transition: all 0.3s ease-in-out;
+}
+
+.active{
+    height: 100%;
+    padding: 1.5rem;;
+    margin-right: 2rem;;
+    transition: all 0.3s ease-in-out;
+    margin-left: 2rem;
+    border-bottom: 2px solid rgba(94, 206, 123, 1);
+}
+
+
+.final{
+ width: 19rem;
+
+ margin: auto;
+}
+.activ{
+  color:  rgba(94, 206, 123, 1);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.in{
+  
+
+    background-color: blue;
+}
+
+
+
+
+
+
+
+.circle{
+
+    height:30px;
+    width:30px;
+    background:rgba(94, 206, 123, 1);
+    position:absolute;
+    bottom:0;
+    right:5%;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transform: scale(0) translateY(-10px);
+    transition:all 0.2s  ease-in-out;
+    cursor: pointer;
+   
+}
+;
+
+
+.cartdiv{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    background-color: teal;
+}
+
+
+.third{
+
+    display: flex;
+   justify-content: center;
+    align-items: center;
+}
+
+
+.price{
+    background: #FFFFFF;
+display:flex;
+justify-content:flex-start;
+
+flex-direction: column;
+
+padding-left: 1rem ;
+
+
+
+}
+
+
+.price>p{
+    padding: 0.7rem;
+}
+p{
+    font-size:1rem;
+    color:black;
+
+}
