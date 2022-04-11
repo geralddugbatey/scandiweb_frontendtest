@@ -1,5 +1,6 @@
 import {useQuery,gql} from '@apollo/client'
 import {InMemoryCache,ApolloClient} from '@apollo/client'
+import styled from 'styled-components'
 
 
 
@@ -390,6 +391,7 @@ export const PassToCart=(item)=>dispatch=>{
     data:item
   })
 }
+
 
 
 export const change=()=>dispatch=>{

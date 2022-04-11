@@ -154,7 +154,9 @@ const itemReducer =(state=initialState,action)=>{
             ...state,
             cartItem:action.data
           }
-          
+
+        
+        
 
           case 'CLOSE_DISPLAY':
             return{

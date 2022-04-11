@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {UpdateCount,Increase,Decrease, clearCartItem, closeDisplay,clearAttribute, getTotal,clear,quantity,change} from '../../actions/index'
+import {UpdateCount,Increase,Decrease, BannerDisplay, clearCartItem, closeDisplay,clearAttribute, getTotal,clear,quantity,change} from '../../actions/index'
 import '../MainComponents/sa.css'
-import {  Heading,FirstDiv,SecondDiv,Plus,Pic,Add,LinkC,Bottom,Att,AttBox,Final,FButton,FButton1 ,P1} from './elements';
+import {  Heading,FirstDiv,SecondDiv,Plus,Pic,Add,LinkC,Bottom,Att,AttBox,Final,FButton,FButton1 ,P1, } from './elements';
 function mapStateToProps(state) {
     return {
             cartItems : state.cart,
@@ -18,12 +18,14 @@ function mapDispatchToProps(dispatch) {
         UpdateCount: ()=>dispatch(UpdateCount()),
         Increase: (item)=>dispatch(Increase(item)),
         Decrease: (item)=>dispatch(Decrease(item)),
+        BannerDisplay: (item)=>dispatch(BannerDisplay(item)),
         getTotal: ()=>dispatch(getTotal()),
         closeDisplay: (item)=>dispatch(closeDisplay(item)),
         clearAttribute: ()=>dispatch(clearAttribute()),
         clear: ()=>dispatch(clear()),
         clearItem: ()=>dispatch(clearCartItem()),
         quantity: (item)=>dispatch(quantity(item)),
+       
         change: ()=>dispatch(change()),
        
 
@@ -43,33 +45,64 @@ class Cart extends Component {
   
 
 
-  
-    
-    async s(data){
-
-        await  this.props.Decrease(data)
-        await this.props.quantity("decrease")
-        if(this.props.cartItems.length==0){
-                await this.props.clear()
-                await this.props.clearAttribute()
-                await this.props.clearItem()
-                
-        }
-      this.setState({
-          prices:true
-      })
-
-      this.props.change()
+  success(){
+    const bannerDetails={
+        bannerValue:'SUCCESS!',
+        bannerActive:true
     }
 
-   async priceRender(data){
+    this.props.BannerDisplay(bannerDetails)
+
+
+    setTimeout(() => {
+        bannerDetails.bannerActive=false
+
+        this.props.BannerDisplay(bannerDetails)
+        
+    }, 1800);
+
+  }
+    
+    async decresePrice(data){
+
+    
+
+            await  this.props.Decrease(data)
+            await this.props.quantity("decrease")
+            if(this.props.cartItems.length==0){
+                    await this.props.clear()
+                    await this.props.clearAttribute()
+                    await this.props.clearItem()
+                    
+            }
+          this.setState({
+              prices:true
+          })
+    
+          this.props.change()
+
+        
+
+        
+      
+    }
+
+   async increasePrice(data,num){
+
+    if(num==0){
+        await  this.props.Increase(data)
+        await this.props.quantity("increase")
+        this.setState({
+            prices:true
+        })
+        this.props.change()
+    }
+
+    else{
+        this.success()
+    }
        
-      await  this.props.Increase(data)
-      await this.props.quantity("increase")
-      this.setState({
-          prices:true
-      })
-      this.props.change()
+     
     }
    render() {
     this.props.getTotal()
@@ -126,15 +159,16 @@ class Cart extends Component {
                           
                             <SecondDiv>
                                
+                               
                                 <Plus>
                                     <Add height="20px" width="20px" onClick={
           ()=>{
-              this.priceRender(i)
+              this.increasePrice(i,0)
           }
       }><p>+</p></Add>
                                     <p>{i.quantity}</p>
                                     <Add  height="20px" width="20px" onClick={()=>{
-          this.s(i)
+          this.decresePrice(i)
       }}><p>-</p></Add>
                                 </Plus>
                                 <Pic height="150px" width="150px">
@@ -157,12 +191,18 @@ class Cart extends Component {
                         <p>VIEW BAG</p>
                     </FButton>
                     </LinkC>
-               
+              
                     <FButton1>
-                    <p>
+                    <p onClick={
+          ()=>{
+              this.increasePrice({},1)
+          }
+
+                    }>
                      CHECK OUT   
                         </p>
                     </FButton1>
+                  
                    
                 
                 </Final>
